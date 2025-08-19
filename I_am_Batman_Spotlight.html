@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I am Batman</title>
+    <style>
+        body {
+            background-color: black;
+            color: #f1c40f;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+        h1 {
+            font-size: 4em;
+            animation: glow 2s infinite alternate;
+            z-index: 2;
+        }
+        .bat-symbol {
+            font-size: 6em;
+            margin-bottom: 20px;
+            animation: pulse 3s infinite alternate;
+            z-index: 2;
+        }
+        .spotlight {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(241,196,15,0.25) 0%, transparent 70%);
+            animation: moveSpotlight 6s linear infinite;
+            z-index: 1;
+        }
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #f1c40f, 0 0 20px #f39c12;
+            }
+            to {
+                text-shadow: 0 0 30px #f1c40f, 0 0 60px #f39c12, 0 0 90px #e67e22;
+            }
+        }
+        @keyframes pulse {
+            from {
+                text-shadow: 0 0 20px #f1c40f, 0 0 40px #f39c12;
+                transform: scale(1);
+            }
+            to {
+                text-shadow: 0 0 40px #f1c40f, 0 0 80px #f39c12, 0 0 120px #e67e22;
+                transform: scale(1.2);
+            }
+        }
+        @keyframes moveSpotlight {
+            0% { transform: translate(-30%, -30%); }
+            25% { transform: translate(30%, -30%); }
+            50% { transform: translate(30%, 30%); }
+            75% { transform: translate(-30%, 30%); }
+            100% { transform: translate(-30%, -30%); }
+        }
+    </style>
+</head>
+<body>
+    <div class="spotlight"></div>
+    <div class="bat-symbol">🦇</div>
+    <h1>I am Batman</h1>
+</body>
+</html>
